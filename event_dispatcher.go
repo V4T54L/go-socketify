@@ -16,8 +16,8 @@ type Message struct {
 // messages to all clients, and send messages to specific connections.
 type EventDispatcher interface {
 	Dispatch(connId string, message Message) // Dispatch a message for a specific connection.
-	Broadcast(message string)                // Broadcast a message to all connected clients.
-	Send(connectionID any, message string)   // Send a message to a specific connection identified by its ID.
+	Broadcast(message Message)               // Broadcast a message to all connected clients.
+	Send(connectionID any, message Message)  // Send a message to a specific connection identified by its ID.
 }
 
 // ExampleEventDispatcher is a basic implementation of the EventDispatcher interface.
